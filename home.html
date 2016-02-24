@@ -1,18 +1,15 @@
-   <div class="wrapper">
+   <div class="wrapper" ng-controller="GMBController">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Food Filter</h3>
-                        <div class="pull-right">
-                            <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
-                                <i class="glyphicon glyphicon-filter"></i>
-                            </span>
+                    <form>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                                <input type="text" class="form-control" placeholder="filter" ng-model="searchItem">
+                            </div>      
                         </div>
-                    </div>
-                    <div class="panel-body">
-                        <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="item_name" />
+                    </form>
 
-                    </div>
-                    <table class="table table-hover" id="dev-table">
+                    <table class="table table-hover table-bordered table-striped" >
                         <thead>
                             <tr>
                                 <th>item_name</th>
@@ -22,7 +19,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="item in savedItems">
+                            <tr ng-repeat="item in savedItems | filter:searchItem">
                                 <td>{{item.item_name}}</td>
                                 <td>{{item.brand_name}}</td>
                                 <td>{{item.nf_calories}}</td>
