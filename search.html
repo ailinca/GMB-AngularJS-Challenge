@@ -1,0 +1,34 @@
+<div class="wrapper" ng-controller="GMBController">
+	<div class="row">
+		<form novalidate class="simple-form">
+  			<input type="text" ng-model="food" placeholder="Search for item"/>
+			<input type="submit" ng-click="fetch(food)" value="Go"/>
+		</form>
+	</div>
+	
+	<table class="table table-hover" id="dev-table">
+    	<thead>
+        	<tr>
+            	<th>item_name</th>
+            	<th>brand</th>
+            	<th>nf_calories</th>
+            	<th>nf_protein</th>
+        	</tr>
+    	</thead>
+    	<tbody>
+        	<tr ng-repeat="result in results.hits" ng-click="addItem(result)" ui-sref="home">
+            	<td>{{result.fields.item_name}}</td>
+            	<td>{{result.fields.brand_name}}</td>
+            	<td>{{result.fields.nf_calories}}</td>
+            	<td>{{result.fields.nf_protein}}</td>
+        	</tr>
+    	</tbody>
+	</table>
+</div>
+<style>
+    .wrapper{
+            margin-top:150px;
+            padding: 0 10px;
+    }
+  
+</style>

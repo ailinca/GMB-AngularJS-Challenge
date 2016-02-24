@@ -1,0 +1,54 @@
+   <div class="wrapper">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Food Filter</h3>
+                        <div class="pull-right">
+                            <span class="clickable filter" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+                                <i class="glyphicon glyphicon-filter"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="item_name" />
+
+                    </div>
+                    <table class="table table-hover" id="dev-table">
+                        <thead>
+                            <tr>
+                                <th>item_name</th>
+                                <th>brand</th>
+                                <th>nf_calories</th>
+                                <th>nf_proteins</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in savedItems">
+                                <td>{{item.item_name}}</td>
+                                <td>{{item.brand_name}}</td>
+                                <td>{{item.nf_calories}}</td>
+                                <td>{{item.nf_protein}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+<style>
+    .wrapper{
+            margin-top:150px;
+            padding: 0 10px;
+        }
+        .clickable{
+            cursor: pointer;   
+        }
+
+        .panel-heading div {
+            margin-top: -18px;
+            font-size: 15px;
+        }
+        .panel-heading div span{
+            margin-left:5px;
+        }
+        .panel-body{
+            display: none;
+        }
+</style>
