@@ -45,7 +45,7 @@ app.controller('GMBController', ['$scope','$state', '$http', 'storeItem', functi
 
 
     function fetch(food) {
-      $http.get("https://api.nutritionix.com/v1_1/search/" + food + "?results=0:30&fields=item_name,brand_name,nf_calories,nf_protein&appId=193105c8&appKey=49578ed35802672737b9b958cd2c0247")
+      $http.get("https://api.nutritionix.com/v1_1/search/" + food + "?results=0:30&fields=item_name,brand_name,nf_calories,nf_protein&appId="+ $scope.appId + "&appKey=" + $scope.appKey)
         .then(function(response) {
           $scope.results = response.data;
         });
