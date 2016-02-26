@@ -16,6 +16,11 @@ var app = angular.module('GMBApp', ['ui.router']);
         .state('search', {
             url: '/search',
             templateUrl: 'search.html'
+        })
+
+        .state('details', {
+        	url: '/details',
+        	templateUrl: 'details.html'
         });
  }]);
 
