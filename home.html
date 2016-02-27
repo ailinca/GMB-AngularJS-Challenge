@@ -19,7 +19,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in savedItems | filter:searchItem" ng-click="getDetails(item.item_id)">
+                    <tr ng-repeat="item in savedItems | filter:searchItem" ng-click="getDetails(item.item_id)" >
                         <td>{{item.item_name}}</td>
                         <td>{{item.brand_name}}</td>
                         <td>{{item.nf_calories}}</td>
@@ -39,10 +39,6 @@
             padding: 0 10px;
           
         }
-        .clickable{
-            cursor: pointer;   
-        }
-
         .panel-heading div {
             margin-top: -18px;
             font-size: 15px;
@@ -56,6 +52,8 @@
         .col-md-2 {
             float:right;
             text-align: right;
-           
+        }
+        td {
+            cursor: pointer;
         }
 </style>

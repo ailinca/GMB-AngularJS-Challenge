@@ -3,7 +3,7 @@
 var app = angular.module('GMBApp', ['ui.router']);
  
  
- app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
     
     $stateProvider      
@@ -22,10 +22,10 @@ var app = angular.module('GMBApp', ['ui.router']);
         	url: '/details',
         	templateUrl: 'details.html'
         });
- }]);
+}]);
 
 
-app.service("storeItem", function(){
+app.service("storeItem", function() {
   	var savedItems = [];
   	var savedDetails = [];
 
@@ -40,8 +40,6 @@ app.service("storeItem", function(){
   	this.saveDetails = function(item) {
   		savedDetails.length = 0;
   		savedDetails.push(item);
-  		console.log("s-a apelat saveDetails si acum in saveDetails avem:");
-  		console.log(savedDetails);
   	};
 
   	this.getSavedDetails = function() {
@@ -59,13 +57,9 @@ app.controller('GMBController', ['$scope','$state', '$http', 'storeItem', functi
 	$scope.savedItems = storeItem.getSavedItems();
 	$scope.savedDetails = storeItem.getSavedDetails();
 
-	console.log("in $scope.savedDetails avem:");
-	console.log($scope.savedDetails);
-	console.log("in $scope.savedItems avem:");
-	console.log($scope.savedItems);
-
-
 	$scope.searchItem = '';
+
+	$scope.$state = $state;
 
 
     function fetch(food) {
@@ -76,9 +70,9 @@ app.controller('GMBController', ['$scope','$state', '$http', 'storeItem', functi
     }
     $scope.fetch = fetch;
 
+
     function addItem(result) {
     	$scope.itemToAdd.item_id = result._id;
-
     	$scope.itemToAdd.item_name = result.fields.item_name;
     	$scope.itemToAdd.brand_name = result.fields.brand_name;
     	$scope.itemToAdd.nf_calories = result.fields.nf_calories;
@@ -86,17 +80,15 @@ app.controller('GMBController', ['$scope','$state', '$http', 'storeItem', functi
 
     	storeItem.saveItem($scope.itemToAdd);
     	
-    	$state.go('home');
-    	
+    	$state.go('home');    	
     }
     $scope.addItem = addItem;
 
     function getDetails(itemID) {
     	$http.get("https://api.nutritionix.com/v1_1/item?id=" + itemID + "&appId="+ $scope.appId + "&appKey=" + $scope.appKey)
-    	  .then(function(response){
+    	  .then(function(response) {
     	  	$scope.itemDetails = response.data;
-    	  	console.log("s-a facut cu succes get-ul detaliilor iar obiectul returnat e: ");
-    	  	console.log($scope.itemDetails);
+    	  	
     	  	storeItem.saveDetails($scope.itemDetails);
     	  });
     	
