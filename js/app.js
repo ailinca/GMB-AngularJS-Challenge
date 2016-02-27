@@ -10,17 +10,17 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         
         .state('home', {
             url: '/home',
-            templateUrl: 'home.html'
+            templateUrl: 'views/home.html'
         })
         
         .state('search', {
             url: '/search',
-            templateUrl: 'search.html'
+            templateUrl: 'views/search.html'
         })
 
         .state('details', {
         	url: '/details',
-        	templateUrl: 'details.html'
+        	templateUrl: 'views/details.html'
         });
 }]);
 
