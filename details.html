@@ -1,0 +1,26 @@
+<div class="container container-home" ng-controller="GMBController">
+	<div class="col-md-8" ng-repeat="details in savedDetails">
+		<h2>{{details.item_name}} </h2>
+	
+		<h3>
+			<p>Brand: {{details.brand_name}} <br> </p>
+			<p>Calories: {{details.nf_calories}}  <br> </p>
+			<p>Protein: {{details.nf_protein}} <br> </p>
+			<p>Total fat: {{details.nf_total_fat}} <br> </p>
+			<p>Cholesterol: {{details.nf_cholesterol}} <br> </p>
+			<p>Sodium: {{details.nf_sodium}} <br></p>
+			<p>Sugar: {{details.nf_sugars}} <br></p>
+		</h3>
+
+	</div>
+</div>
+<style>
+	h4 {
+		padding-left: 20px;
+		float: left;
+	}
+	.container-home {
+		margin-top:140px;
+        padding: 0 10px;
+	}
+</style>

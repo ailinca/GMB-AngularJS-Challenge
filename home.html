@@ -19,7 +19,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in savedItems | filter:searchItem">
+                    <tr ng-repeat="item in savedItems | filter:searchItem" ng-click="getDetails(item.item_id)">
                         <td>{{item.item_name}}</td>
                         <td>{{item.brand_name}}</td>
                         <td>{{item.nf_calories}}</td>

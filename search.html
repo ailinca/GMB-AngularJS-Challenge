@@ -16,7 +16,7 @@
         	</tr>
     	</thead>
     	<tbody>
-        	<tr ng-repeat="result in results.hits" ng-click="addItem(result)" ui-sref="home">
+        	<tr ng-repeat="result in results.hits" ng-click="addItem(result)">
             	<td>{{result.fields.item_name}}</td>
             	<td>{{result.fields.brand_name}}</td>
             	<td>{{result.fields.nf_calories}}</td>
