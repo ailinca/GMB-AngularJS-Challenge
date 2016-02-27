@@ -38,6 +38,7 @@ app.service("storeItem", function(){
   	};
 
   	this.saveDetails = function(item) {
+  		savedDetails.length = 0;
   		savedDetails.push(item);
   		console.log("s-a apelat saveDetails si acum in saveDetails avem:");
   		console.log(savedDetails);
