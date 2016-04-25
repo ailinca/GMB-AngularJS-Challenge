@@ -1,0 +1,38 @@
+p {
+	padding-left: 60px;
+}
+
+.welcome-message {
+    float: none !important;
+    text-align: right;
+}
+        
+.bold-text {
+    font-weight: bold;
+}
+
+.container-home{
+    margin-top:150px;
+    padding: 0 10px; 
+}
+
+.panel-heading div {
+    margin-top: -18px;
+    font-size: 15px;
+}
+
+.panel-heading div span{
+    margin-left:5px;
+}
+
+.panel-body{
+    display: none;
+}
+
+.add-item-button {
+    float:right;
+}
+        
+td {
+    cursor: pointer;
+}
