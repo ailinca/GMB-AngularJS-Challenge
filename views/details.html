@@ -1,17 +1,17 @@
 <div class="wrapper container-home">
-	<div class="col-md-9" ng-repeat="details in savedDetails">
-		<h2>{{details.item_name}} </h2>
+	<div class="col-md-9">
+		<h2>{{ ctrl.itemDetails.item_name}} </h2>
 	
 		<h3>
 			<ul>
-				<li>Brand: {{details.brand_name}}  </li>
-				<li>Calories: {{details.nf_calories}}   </li>
-				<li>Protein: {{details.nf_protein}}  </li>
-				<li>Total carbohydrate: {{details.nf_total_carbohydrate}}  </li>
-				<li>Total fat: {{details.nf_total_fat}}  </li>
-				<li>Cholesterol: {{details.nf_cholesterol}}  </li>
-				<li>Sodium: {{details.nf_sodium}} </li>
-				<li>Sugar: {{details.nf_sugars}} </li> 
+				<li>Brand: {{ ctrl.itemDetails.brand_name}}  </li>
+				<li>Calories: {{ ctrl.itemDetails.nf_calories}}   </li>
+				<li>Protein: {{ ctrl.itemDetails.nf_protein}}  </li>
+				<li>Total carbohydrate: {{ ctrl.itemDetails.nf_total_carbohydrate}}  </li>
+				<li>Total fat: {{ ctrl.itemDetails.nf_total_fat}}  </li>
+				<li>Cholesterol: {{ ctrl.itemDetails.nf_cholesterol}}  </li>
+				<li>Sodium: {{ ctrl.itemDetails.nf_sodium}} </li>
+				<li>Sugar: {{ ctrl.itemDetails.nf_sugars}} </li> 
 			</ul>
 		</h3>
 

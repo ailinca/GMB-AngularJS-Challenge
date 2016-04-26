@@ -2,7 +2,7 @@
 	<div class="row">
 		<form novalidate class="simple-form">
   			<input type="text" ng-model="food" placeholder="Search for item"/>
-			<input type="submit" ng-click="fetch(food)" value="Go"/>
+			<input type="submit" ng-click="ctrl.fetch(food)" value="Go"/>
 		</form>
 	</div>
 	
@@ -16,11 +16,11 @@
         	</tr>
     	</thead>
     	<tbody>
-        	<tr ng-repeat="result in results.hits" ng-click="addItem(result)">
-            	<td>{{result.fields.item_name}}</td>
-            	<td>{{result.fields.brand_name}}</td>
-            	<td>{{result.fields.nf_calories}}</td>
-            	<td>{{result.fields.nf_protein}}</td>
+        	<tr ng-repeat="result in ctrl.results.hits" ng-click="ctrl.addItem(result)">
+            	<td>{{ result.fields.item_name}}</td>
+            	<td>{{ result.fields.brand_name}}</td>
+            	<td>{{ result.fields.nf_calories}}</td>
+            	<td>{{ result.fields.nf_protein}}</td>
         	</tr>
     	</tbody>
 	</table>
